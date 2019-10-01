@@ -8,7 +8,7 @@
     <title>Do you know your soccer moves?</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
 
 </head>
     <body>
@@ -34,13 +34,17 @@
                         Also known as the 360, this soccer move uses a spin to create separation from defenders and win yourself some extra time and space.
                     </legend>
                     <div class="quiz-box-options">
-                        <input type="radio" name="question-option" value="okocha">&nbsp;The Okocha
-                        <br />
-                        <input type="radio" name="question-option" value="roulette">&nbsp;The Roulette
-                        <br />
-                        <input type="radio" name="question-option" value="rabona">&nbsp;The Rabona
-                        <br />
-                        <input type="radio" name="question-option" value="rainbow">&nbsp;The Rainbow
+                        <input type="radio" id="question-option1" name="question-option" value="okocha">
+                        <label for="question-option1">The Okocha</label>
+
+                        <input type="radio" id="question-option2" name="question-option" value="roulette">
+                        <label for="question-option2">The Roulette</label>
+
+                        <input type="radio" id="question-option3" name="question-option" value="rabona">
+                        <label for="question-option3">The Rabona</label>
+
+                        <input type="radio" id="question-option4" name="question-option" value="rainbow">
+                        <label for="question-option4">The Rainbow</label>
                     </div>
                     <button type = "button" id="submit-button">Submit</button>
                 </form>
@@ -48,6 +52,6 @@
         </main>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="index.js"></script>
+        <script src="./scripts/index.js"></script>
     </body>
 </html>
