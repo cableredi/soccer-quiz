@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Do you know your soccer moves? Quiz">
+
+    <title>Do you know your soccer moves?</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+    <body>
+        <header role="heading">
+            <h1>How well do you know your soccer moves?</h1>
+        </header>
+
+        <main class="main">
+            <section class="statistics">
+                <div class="statistics-totals">
+                    <span class="statistics-title">Questions:&nbsp;</span>
+                    1/10
+                </div>
+                <div class="statistics-score">
+                    <span class="statistics-title">Score:&nbsp;</span>
+                    8/10
+                </div>
+            </section>
+
+            <section class="quiz-box">
+                <form id="quiz-box-questions">
+                    <legend class="quiz-box-correct">
+                        Correct! It is the Roulette.
+                    </legend>
+                    <div class="quiz-box-answer">
+                        <span class="bold">To perform this move: </span>With the ball running in front of you and the opposition player close to putting in a tackle, put your inside foot on top of the ball and roll it back slightly.
+                        At the same time, spin your body and roll the ball with your outside foot into the direction you’re turning towards.
+                        If done correctly, the ball should now be in your path as you sprint by the defender.
+                    </div>
+                    <button type = "button" id="next-button">Next >></button>
+                </form>
+            </section>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
