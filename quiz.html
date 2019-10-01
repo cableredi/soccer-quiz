@@ -8,63 +8,46 @@
     <title>Do you know your soccer moves?</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body>
-    <header role="heading">
-        <h1>How well do you know your soccer moves?</h1>
-    </header>
+    <body>
+        <header role="heading">
+            <h1>How well do you know your soccer moves?</h1>
+        </header>
 
-    <main class="main">
-        <section class="statistics">
-            <div class="totals">
-                Questions:&nbsp;
-                <span class="totals-question-number">0</span>
-                &#47;
-                <span class="total=question-total">10</span>
-            </div>
-            <div class="correct">
-                Correct:&nbsp;
-                <span class="correct-number">8</span>
-                &nbsp;Incorrect:&nbsp;
-                <span class="incorrect-number">2</span>
-            </div>
-        </section>
-        <section class="quizBox">
-            <section class="quizBox-questions">
-                <form class="quizBox-form">
-                    <legend class="quizBox-question">
+        <main class="main">
+            <section class="statistics">
+                <div class="statistics-totals">
+                    <span class="statistics-title">Questions:&nbsp;</span>
+                    1/10
+                </div>
+                <div class="statistics-score">
+                    <span class="statistics-title">Score:&nbsp;</span>
+                    8/10
+                </div>
+            </section>
+
+            <section class="quiz-box">
+                <form id="quiz-box-questions">
+                    <legend>
                         Also known as the 360, this soccer move uses a spin to create separation from defenders and win yourself some extra time and space.
                     </legend>
-                    <label for="okocha">
-                        <input class="radio" type="radio" id="question" value="okocha" name="okocha" required>
-                        The Okocha
-                    </label>
-                    <label for="roulette">
-                        <input class="radio" type="radio" id="question" value="roulette" name="roulette" required>
-                        The Roulette
-                        <div class="answer">
-                            You are correct!  First demonstated by.....
-                        </div>
-                    </label>
-                    <label for="rabona">
-                        <input class="radio" type="radio" id="question" value="rabona" name="rabona" required>
-                        The Rabona
-                    </label>
-                    <label for="rainbow">
-                        <input class="radio" type="radio" id="question" value="rainbow" name="rainbow" required>
-                        The Rainbow
-                    </label>
-                    <button type="submit" class="submit-button">Submit</button >
+                    <div class="quiz-box-options">
+                        <input type="radio" name="question-option" value="okocha">&nbsp;The Okocha
+                        <br />
+                        <input type="radio" name="question-option" value="roulette">&nbsp;The Roulette
+                        <br />
+                        <input type="radio" name="question-option" value="rabona">&nbsp;The Rabona
+                        <br />
+                        <input type="radio" name="question-option" value="rainbow">&nbsp;The Rainbow
+                    </div>
+                    <button type = "button" id="submit-button">Submit</button>
                 </form>
             </section>
-        </section>
-    </main>
+        </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="index.js"></script>
-
-</body>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
