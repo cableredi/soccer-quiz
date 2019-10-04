@@ -32,13 +32,13 @@ function renderQuestionProgress() {
     let img = document.createElement('img');
 
     if (STORE.scores.length === 0) {
-      img.src = '../images/black-ball.png';
+      img.src = './images/black-ball.png';
     } else if (STORE.scores[i] === 'correct') {
-      img.src = '../images/world-ball.png';
+      img.src = './images/world-ball.png';
     } else if (STORE.scores[i] === 'incorrect') {
-      img.src = '../images/red-ball.png';
+      img.src = './images/red-ball.png';
     } else {
-      img.src = '../images/black-ball.png';
+      img.src = './images/black-ball.png';
     }
     
     $('.statistics-balls').append(img);
