@@ -82,5 +82,6 @@ const STORE = {
     },
   ],
   currentQuestion: 0,
-  currentScore: 0
+  currentScore: 0,
+  scores: []
 };

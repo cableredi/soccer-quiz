@@ -12,7 +12,7 @@ function generateStatistics() {
   return `
     <section class="statistics">
       <div class="statistics-totals">
-        <span class="statistics-title">Questions:&nbsp;</span>
+        <span class="statistics-title">Question:&nbsp;</span>
         ${STORE.currentQuestion + 1}/${STORE.questions.length}
       </div>
       <div class="statistics-score">
@@ -24,12 +24,35 @@ function generateStatistics() {
   `;
 }
 
+/* Progress function */
+function renderQuestionProgress() {
+  console.log('Entered renderQuestionProgress');
+
+  for (let i = 0; i < STORE.questions.length; i++) {
+    let img = document.createElement('img');
+
+    if (STORE.scores.length === 0) {
+      img.src = '../images/black-ball.png';
+    } else if (STORE.scores[i] === 'correct') {
+      img.src = '../images/world-ball.png';
+    } else if (STORE.scores[i] === 'incorrect') {
+      img.src = '../images/red-ball.png';
+    } else {
+      img.src = '../images/black-ball.png';
+    }
+    
+    $('.statistics-balls').append(img);
+  }
+}
+
 function renderQuizBox() {
   const statistics = generateStatistics();
   const question = generateQuestion();
 
-  $('.statistics').html(statistics);
+  $('.statistics').html(statistics); 
   $('.quiz-box').html(question);
+  $('.statistics').css('display', 'block');
+  renderQuestionProgress(); // progress
 }
 
 function startQuiz() {
@@ -93,25 +116,33 @@ function submitAnswer() {
   });
 }
 
-function updateScore() {
+function updateScore(answer) {
   console.log('Entered updateScore');
 
-  STORE.currentScore++;
+  if (answer === 'correct') STORE.currentScore++;
+
+  STORE.scores.push(answer);
 
   $('.stastics-score').text(STORE.currentScore);
+  $('.statistics-balls').html('');
+  renderQuestionProgress();
 }
 
 function correctAnswer() {
   console.log('Entered correctAnswer');
 
   const correctForm = `
-    <h2>You are correct!!!</h2>
-    <h3>${[STORE.questions[STORE.currentQuestion].answer]}</h3>
-    ${STORE.questions[STORE.currentQuestion].explanation}
-    <button type="submit" class="next-button" id="js-next-button">Next >></button>
+    <div class="quiz-box-answers">
+      <h2 class='quiz-box-correct'>You are correct!!!</h2>
+      <h3>${[STORE.questions[STORE.currentQuestion].answer]}</h3>
+      <div class='quiz-box-explanation'>
+        ${STORE.questions[STORE.currentQuestion].explanation}
+      </div>
+      <button type="submit" class="next-button" id="js-next-button">Next >></button>
+    </div>
   `;
 
-  updateScore();
+  updateScore('correct');
 
   return correctForm;
 }
@@ -120,11 +151,17 @@ function incorrectAnswer(selected) {
   console.log('Entered correctAnswer');
 
   const incorrectForm = `
-    <h2>Sorry, its not ${selected} but </h2>
-    <h3>${[STORE.questions[STORE.currentQuestion].answer]}</h3>
-    ${STORE.questions[STORE.currentQuestion].explanation}
-    <button type="submit" class="next-button" id="js-next-button">Next >></button>
+    <div class="quiz-box-answers">
+      <h2 class='quiz-box-incorrect'>Sorry, its not ${selected} but </h2>
+      <h3>${[STORE.questions[STORE.currentQuestion].answer]}</h3>
+      <div class='quiz-box-explanation'>
+        ${STORE.questions[STORE.currentQuestion].explanation}
+      </div>
+      <button type="submit" class="next-button" id="js-next-button">Next >></button>
+    </div>
   `;
+
+  updateScore('incorrect');
 
   return incorrectForm;
 }
@@ -158,11 +195,14 @@ function finalTally() {
   }
 
   const finalScore = `
-    <h1>Final Score:&nbsp;<span class="stastics-score">${STORE.currentScore}</span>/${STORE.questions.length}</h1>
-    <h2>${message}</h2>
-    <button type="submit" class="restart-button" id="js-restart-button"><< Restart >></button>
+    <div class="final-score">
+      <h1>Final Score:&nbsp;<span class="stastics-score">${STORE.currentScore}</span>/${STORE.questions.length}</h1>
+      <h2>${message}</h2>
+      <button type="submit" class="restart-button" id="js-restart-button"><< Restart >></button>
+    </div>
   `;
 
+  $('.statistics').hide();
   $('.quiz-box').html(finalScore);
 }
 
@@ -174,6 +214,7 @@ function restartQuiz() {
 
     STORE.currentQuestion = 0;
     STORE.currentScore = 0;
+    STORE.scores = [];
 
     renderQuizBox();
   });
