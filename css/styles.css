@@ -9,7 +9,8 @@ body {
     background-color: black;
     font-size: 12px;
 }
-header {
+header,
+footer {
     color: palegreen;
 }
 
@@ -17,11 +18,13 @@ h1, h2, h3 {
     font-family: 'Poor Story', cursive;
 }
 
-h1 {
+h1,
+footer {
     text-align: center;
 }
 
-h2 {
+h2, 
+footer {
     margin-top: 10px;
 }
 
@@ -143,9 +146,6 @@ button {
 
 .quiz-box-options {
     margin: 10px auto;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;*/
 }
   
 .quiz-box-options input[type="radio"] {
@@ -179,7 +179,8 @@ button {
     background-color: darkgreen;
     border-color: darkgreen;
 }
-  
+
+ 
 @media only screen and (max-width: 600px) {  
     main {
         width: 90%;
@@ -193,7 +194,7 @@ button {
     }
 
     .quiz-box {
-        height: 400px;
+        min-height: 420px;
     }
 
     h1 {
@@ -244,7 +245,7 @@ button {
     }
 
     .quiz-box {
-        height: 450px;
+        min-height: 350px;
     }
 
     h1 {
@@ -295,7 +296,7 @@ button {
     }
 
     .quiz-box {
-        height: 500px;
+        min-height: 500px;
     }
 
     h1 {

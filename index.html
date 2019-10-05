@@ -14,22 +14,35 @@
 
 </head>
     <body>
-        <header role="heading">
+        <header role="banner">
             <h1>How well do you know your soccer moves?</h1>
         </header>
 
-        <main class="main">
+        <main class="main" role="main">
             <section class="statistics"></section>
             <section class="quiz-box">
                 <section class="quiz-box-home">
                     <h2>Test your knowledge of elite soccer moves</h2>
                     <div>
-                        <img src="./images/player.png" alt="Player" />
+                        <img src="./images/player.png" alt="Multiple players" />
                     </div>
                     <button type="submit" class="start-button" id="js-start-button">Start</button>
                 </section>
             </section>
         </main>
+
+        <footer role="contentinfo">
+            <address>
+                Kim Cable&nbsp;-&nbsp;
+                Copyright &copy; 
+                <script>
+                    let year = new Date();
+                    year = year.getYear();
+                    if ( year < 1900) year += 1900;
+                    document.write(year);
+                </script>
+            </address
+        </footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="./scripts/store.js"></script>

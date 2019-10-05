@@ -33,12 +33,16 @@ function renderQuestionProgress() {
 
     if (STORE.scores.length === 0) {
       img.src = './images/black-ball.png';
+      img.alt = 'Unanswered question';
     } else if (STORE.scores[i] === 'correct') {
       img.src = './images/world-ball.png';
+      img.alt = 'Correct answer';
     } else if (STORE.scores[i] === 'incorrect') {
       img.src = './images/red-ball.png';
+      img.alt = 'Incorrect answer';
     } else {
       img.src = './images/black-ball.png';
+      img.alt = 'Unanswered question';
     }
     
     $('.statistics-balls').append(img);
@@ -63,7 +67,7 @@ function startQuiz() {
 
     renderQuizBox();
   });
-}
+}   
 
 function generateOptions() {
   console.log("Entered generateOptions ");
@@ -72,8 +76,8 @@ function generateOptions() {
 
   let optionsVar = '';
   for (let i = 0; i < questions.options.length; i++) {
-    optionsVar = optionsVar + `
-      <input type="radio" id="question-option${i}" name="question-option" value="${questions.options[i]}">
+      optionsVar = optionsVar + `
+      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}">
       <label for="question-option${i}">${questions.options[i]}</label>
     `;
   }
@@ -100,6 +104,8 @@ function submitAnswer() {
   console.log("Entered submitAnswer ");
 
   $('.main').on('change', function (event) {
+    console.log('option checked');
+
     $(this).closest("form").submit();
     event.preventDefault();
 
