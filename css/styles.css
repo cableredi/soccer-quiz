@@ -47,7 +47,7 @@ button {
 }
 
 button:hover,
-button:focus {
+button:focus {  
     background-color: darkgreen;
     border: 1px solid darkgreen;
     color: black;
@@ -143,9 +143,9 @@ button {
 
 .quiz-box-options {
     margin: 10px auto;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;*/
 }
   
 .quiz-box-options input[type="radio"] {
@@ -155,7 +155,7 @@ button {
 }
 
 .quiz-box-options label {
-    display: inline-block;
+    display: block;
     border: 2px solid #444;
     margin: 5px;
     background-color: black;
@@ -163,8 +163,13 @@ button {
     border-radius: 5px;
 }
 
-.quiz-box-options label:hover,
-.quiz-box-options label:focus {
+.quiz-box-options label:hover {
+    background-color: green;
+    color: black;
+    font-weight: bold;
+}
+
+.quiz-box-options input[type="radio"]:focus + label {
     background-color: green;
     color: black;
     font-weight: bold;
@@ -302,7 +307,7 @@ button {
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .quiz-box-options label {
