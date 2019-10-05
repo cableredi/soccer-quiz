@@ -77,7 +77,7 @@ function generateOptions() {
   let optionsVar = '';
   for (let i = 0; i < questions.options.length; i++) {
       optionsVar = optionsVar + `
-      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}" tabindex="${i}">
+      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}" tabindex="0">
       <label for="question-option${i}">${questions.options[i]}</label>
     `;
   }
