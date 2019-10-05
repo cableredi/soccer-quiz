@@ -38,10 +38,9 @@ main {
 
 button {
     display: block;
-    margin: 0 auto;
+    margin: 0px auto;
     background-color: black;
     color: palegreen;
-    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
@@ -113,6 +112,19 @@ button:focus {
     font-size: 20px;
 }
 
+.question-submit-button {
+    background-color: green;
+    border: 1px solid green;
+    color: black;
+}
+
+.question-submit-button:hover,
+.question-submit-button:focus {
+    background-color: darkgreen;
+    border: 1px solid darkgreen;
+    color: black;
+}
+
 form {
     text-align: center;
 }
@@ -138,10 +150,6 @@ legend {
 
 .quiz-box-incorrect {
     color: red;
-}
-
-button {
-    margin-top: 20px;
 }
 
 .quiz-box-options {
@@ -180,7 +188,6 @@ button {
     border-color: darkgreen;
 }
 
- 
 @media only screen and (max-width: 600px) {  
     main {
         width: 90%;
@@ -229,6 +236,13 @@ button {
 
     .statistics-balls {
         display: none;
+    }
+    
+    button {
+        margin-top: 20px;
+        width: 100px;
+        font-size: 1.2em;
+        padding: 5px 10px;
     }
 }
 
@@ -281,6 +295,13 @@ button {
     .statistics-balls img {
         margin: 0 2px;
     }
+    
+    button {
+        margin-top: 50px;
+        width: 300px;
+        font-size: 1.3em;
+        padding: 8px 15px;
+    }
 }
 
 @media only screen and (min-width: 800px) { 
@@ -326,5 +347,12 @@ button {
 
     .statistics-balls {
         display: block;
+    }
+
+    button {
+        margin-top: 50px;
+        width: 300px;
+        font-size: 1.5em;
+        padding: 10px 20px;
     }
 }
