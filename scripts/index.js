@@ -77,7 +77,7 @@ function generateOptions() {
   let optionsVar = '';
   for (let i = 0; i < questions.options.length; i++) {
       optionsVar = optionsVar + `
-      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}" taxindex="0">
+      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}" required>
       <label for="question-option${i}">${questions.options[i]}</label>
     `;
   }
@@ -94,6 +94,7 @@ function generateQuestion() {
           ${STORE.questions[STORE.currentQuestion].question}
       </legend>
       <div class="quiz-box-options">${generateOptions()}</div>
+      <button type="submit" class="question-submit-button">Submit</button>
     </form>
   `;
 
@@ -104,14 +105,20 @@ function submitAnswer() {
   console.log("Entered submitAnswer ");
 
   /*$('.main').on('change', function (event) { */
-  $('.quiz-box').on('change', '.quiz-box-options', function (event) {
+  $('.quiz-box').on('click', '.question-submit-button', function (event) {
 
-    $(this).closest("form").submit();
+    /*$(this).closest("form").submit();*/
     event.preventDefault();
 
     let answer = '';
 
     let selected = $('input:checked').val();
+
+    if (!selected || selected === 'undefined') {
+      alert('Please select an answer');
+      return;
+    }
+
     if (selected === STORE.questions[STORE.currentQuestion].answer) {
       answer = correctAnswer();
     } else {
