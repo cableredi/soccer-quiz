@@ -106,7 +106,6 @@ function submitAnswer() {
 
   /*$('.main').on('change', function (event) { */
   $('.quiz-box').on('click', '.question-submit-button', function (event) {
-
     /*$(this).closest("form").submit();*/
     event.preventDefault();
 
