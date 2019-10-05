@@ -77,7 +77,7 @@ function generateOptions() {
   let optionsVar = '';
   for (let i = 0; i < questions.options.length; i++) {
       optionsVar = optionsVar + `
-      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}" tabindex="0">
+      <input type="radio" id="question-option${i}" name="quiz-box-option" value="${questions.options[i]}">
       <label for="question-option${i}">${questions.options[i]}</label>
     `;
   }
@@ -103,8 +103,8 @@ function generateQuestion() {
 function submitAnswer() {
   console.log("Entered submitAnswer ");
 
-  $('.main').on('change', function (event) {
-    console.log('option checked');
+  /*$('.main').on('change', function (event) { */
+  $('.quiz-box-questions').on('click', function (event) {
 
     $(this).closest("form").submit();
     event.preventDefault();
