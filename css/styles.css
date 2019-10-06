@@ -131,7 +131,6 @@ form {
 
 legend {
     margin: 20px auto;
-    font-size: 1.3em;
     padding: 5px;
     border-radius: 5px;
     width: 80%;
@@ -216,6 +215,10 @@ legend {
         font-size: 16px;
     }
 
+    legend {
+        font-size: 1.3em;
+    }
+
     .quiz-box-options label {
         padding: 5px 5px;
         font-size: 16px;
@@ -274,6 +277,10 @@ legend {
         font-size: 20px;
     }
 
+    legend {
+        font-size: 1.4em;
+    }
+
     .quiz-box-options label {
         padding: 5px 10px;
         font-size: 14px;
@@ -330,6 +337,10 @@ legend {
 
     h3 {
         font-size: 30px;
+    }
+
+    legend {
+        font-size: 1.5em;
     }
 
     .quiz-box-options label {
