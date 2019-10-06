@@ -50,6 +50,8 @@ function renderQuestionProgress() {
 }
 
 function renderQuizBox() {
+  console.log("Entered renderQuizBox ");
+
   const statistics = generateStatistics();
   const question = generateQuestion();
 
@@ -93,10 +95,13 @@ function generateQuestion() {
       <legend>
           ${STORE.questions[STORE.currentQuestion].question}
       </legend>
+      <div class="error">Please select the correct soccer move.</div>
       <div class="quiz-box-options">${generateOptions()}</div>
       <button type="submit" class="question-submit-button">Submit</button>
     </form>
   `;
+
+  $('.quiz-box').find('.error').toggle();
 
   return questionForm;
 }
@@ -112,7 +117,7 @@ function submitAnswer() {
     let selected = $('input:checked').val();
 
     if (!selected || selected === 'undefined') {
-      alert('Please select an answer');
+      $('.quiz-box').find('.error').toggle();
       return;
     }
 

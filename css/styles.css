@@ -151,6 +151,17 @@ legend {
     color: red;
 }
 
+.error {
+    display: none;
+    color: red;
+    margin: 0 auto;
+    border: 2px solid red;
+    padding: 5px;
+    width: 50%;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
 .quiz-box-options {
     margin: 10px auto;
 }
