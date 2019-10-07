@@ -1,14 +1,10 @@
 "use strict";
 
 function generateNewQuestion() {
-  console.log('Entered generateNewQuestion');
-
   STORE.currentQuestion++;
 }
 
 function generateStatistics() {
-  console.log("Entered generateStatistics ");
-
   return `
     <section class="statistics">
       <div class="statistics-totals">
@@ -26,8 +22,6 @@ function generateStatistics() {
 
 /* Progress function */
 function renderQuestionProgress() {
-  console.log('Entered renderQuestionProgress');
-
   for (let i = 0; i < STORE.questions.length; i++) {
     let img = document.createElement('img');
 
@@ -50,8 +44,6 @@ function renderQuestionProgress() {
 }
 
 function renderQuizBox() {
-  console.log("Entered renderQuizBox ");
-
   const statistics = generateStatistics();
   const question = generateQuestion();
 
@@ -62,8 +54,6 @@ function renderQuizBox() {
 }
 
 function startQuiz() {
-  console.log("Entered startQuiz ");
-
   $('#js-start-button').on('click', function(e){
     $('.quiz-box-home').hide();
 
@@ -72,8 +62,6 @@ function startQuiz() {
 }   
 
 function generateOptions() {
-  console.log("Entered generateOptions ");
-  
   const questions = STORE.questions[STORE.currentQuestion];
 
   let optionsVar = '';
@@ -88,8 +76,6 @@ function generateOptions() {
 }
 
 function generateQuestion() {
-  console.log("Entered generateQuestion ");
-
   const questionForm = `
     <form id="quiz-box-questions">
       <legend>
@@ -107,8 +93,6 @@ function generateQuestion() {
 }
 
 function submitAnswer() {
-  console.log("Entered submitAnswer ");
-
   $('.quiz-box').on('click', '.question-submit-button', function (event) {
     event.preventDefault();
 
@@ -132,8 +116,6 @@ function submitAnswer() {
 }
 
 function updateScore(answer) {
-  console.log('Entered updateScore');
-
   if (answer === 'correct') STORE.currentScore++;
 
   STORE.scores.push(answer);
@@ -144,9 +126,7 @@ function updateScore(answer) {
 }
 
 function correctAnswer() {
-  console.log('Entered correctAnswer');
-
-  const correctForm = `
+   const correctForm = `
     <div class="quiz-box-answers">
       <h2 class='quiz-box-correct'>You are correct!!!</h2>
       <h3>${[STORE.questions[STORE.currentQuestion].answer]}</h3>
@@ -163,8 +143,6 @@ function correctAnswer() {
 }
 
 function incorrectAnswer(selected) {
-  console.log('Entered correctAnswer');
-
   const incorrectForm = `
     <div class="quiz-box-answers">
       <h2 class='quiz-box-incorrect'>Sorry, its not ${selected} but </h2>
@@ -182,9 +160,7 @@ function incorrectAnswer(selected) {
 }
 
 function nextQuestion() {
-  console.log("Entered nextQuestion ");
-
-  $('.quiz-box').on('click', '#js-next-button', function(e){
+   $('.quiz-box').on('click', '#js-next-button', function(e){
     console.log('clicked on next');
 
     if (STORE.currentQuestion >= STORE.questions.length - 1) {
@@ -197,8 +173,6 @@ function nextQuestion() {
 }
 
 function finalTally() {
-  console.log("Entered finalTally");
-
   let message = '';
 
   if (STORE.currentScore >= 8) {
@@ -222,8 +196,6 @@ function finalTally() {
 }
 
 function restartQuiz() {
-  console.log("Entered retartQuiz");
-
   $('.quiz-box').on('click', '#js-restart-button', function(e){
     console.log('clicked restart');
 
